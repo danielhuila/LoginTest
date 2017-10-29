@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginTest.MainPage"
+             NavigationPage.HasBackButton="False"
+             Title="Información de Usuario">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <Label Text="{Binding Message}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+
+            <StackLayout Grid.Row="1" Orientation="Vertical" BackgroundColor="White" Opacity="0.8">
+                <StackLayout Orientation="Horizontal" Margin="5,5">
+                    <Button Margin="0,10"  Image="LogoCamera_opt" x:Name="BtnCamera" Command="{Binding TakePictureCommand}"/>
+                    <Button Margin="0,10"  Image="SaveImage_16x16" x:Name="BtnSave" Command="{Binding SaveUserCommand}"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Orientation="Vertical" BackgroundColor="White" Opacity="0.8">
+                <StackLayout Orientation="Horizontal" Margin="5,5">
+                    <Label Text="Tipo Documento: " x:Name="LblIdentificationType" TextColor="Gray"  HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding IdentificationType, Mode=OneWay}" TextColor="#0072BD"/>
+
+                    <Label Text="No. Documento: " x:Name="LblIdentificationNumber" TextColor="Gray"  HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding IdentificationNumber, Mode=OneWay}" TextColor="#0072BD"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="2" Orientation="Vertical" BackgroundColor="White" Opacity="0.8">
+                <StackLayout Orientation="Horizontal" Margin="5,5">
+                    <Label Text="Nombres: " x:Name="LblNameUser" TextColor="Gray"  HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding NameUser, Mode=OneWay}" TextColor="#0072BD"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Orientation="Vertical" BackgroundColor="White" Opacity="0.8">
+                <StackLayout Orientation="Horizontal" Margin="5,5">
+                    <Label Text="Apellidos: " x:Name="LblLastName" TextColor="Gray"  HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding LastNameUser, Mode=OneWay}" TextColor="#0072BD"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="4" Orientation="Vertical" BackgroundColor="White" Opacity="0.8">
+                <StackLayout Orientation="Horizontal" Margin="5,5">
+                    <Label Text="E-mail: " x:Name="LblEmail" TextColor="Gray"  HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding EmailUser, Mode=OneWay}" TextColor="#0072BD"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Label Text="Foto: " x:Name="LblPhoto" TextColor="Gray"  HorizontalTextAlignment="Start"/>
+            <Image x:Name="PhotoImage" Source="{Binding PhotoUser}" Aspect="AspectFit" Margin="10" HeightRequest="200" WidthRequest="200" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <StackLayout Grid.Row="5" Orientation="Vertical" BackgroundColor="White" Opacity="0.8">
+                <StackLayout Orientation="Horizontal" Margin="5,5">
+                    <Label Text="Dir. de Almacenamiento: " x:Name="LblSaveStorage" TextColor="Gray"  HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding StorageDirectory, Mode=OneWay}" TextColor="#0072BD"/>
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout Grid.Row="5" Orientation="Vertical" BackgroundColor="White" Opacity="0.8">
+                <StackLayout Orientation="Horizontal" Margin="5,5">
+                    <Label Text="Latitud: " x:Name="LblLatitud" TextColor="Gray"  HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding Latitud, Mode=OneWay}" TextColor="#0072BD"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="6" Orientation="Vertical" BackgroundColor="White" Opacity="0.8">
+                <StackLayout Orientation="Horizontal" Margin="5,5">
+                    <Label Text="Longitud: " x:Name="LblLongitud" TextColor="Gray"  HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding Longitud, Mode=OneWay}" TextColor="#0072BD" />
+                </StackLayout>
+            </StackLayout>
+
+            <Button Margin="0,10" Text="Logout" BackgroundColor="#0072BD" TextColor="White" FontSize="18" Command="{Binding LogoutCommand}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
